@@ -1,0 +1,64 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    image: mysql
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${PASSWORD}"
+      - "MYSQL_DATABASE=${DB_NAME}"
+    ports:
+      - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - shared-network
+    volumes:
+      - db-config:/etc/mysql
+      - db-data:/var/lib/mysql
+      - ./db/backup/files:/data_backup/data
+
+  vacation-backend:
+    container_name: vacation_backend
+    image: vacation_backend:1.0.0
+    build:
+      context: vacation-back
+      dockerfile: Dockerfile
+    depends_on:
+      - mysqldb
+    environment:
+      - "HOST=${HOST}"
+      - "PORT=${PORT}"
+      - "USERNAME=${USERNAME}"
+      - "PASSWORD=${PASSWORD}"
+      - "DB_NAME=${DB_NAME}"
+    networks:
+      - shared-network
+    ports:
+      - 5000:3000
+    volumes:
+      - ./vacation-back:/app
+      - ./vacation-back/node_modules:/app/node_modules
+    restart: unless-stopped
+
+  vacation-frontend:
+    container_name: vacation_frontend
+    image: vacation_frontend:1.0.0
+    build:
+      context: vacation-front
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - vacation-backend
+    networks:
+      - shared-network
+    volumes:
+      - ./vacation-front:/app
+      - ./vacation-front/node_modules:/app/node_modules
+    restart: unless-stopped
+
+networks:
+  shared-network:
+
+volumes:
+  db-config:
+  db-data:
