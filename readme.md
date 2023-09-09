@@ -8,6 +8,13 @@ location : `exercices` directory and subfolder 1 or 2
 
 To run ts file : `npx ts-node exercice_name.ts`
 
+Exercice 1 question a : `npx exercices/01/a.ts`
+Exercice 1 question b : `npx exercices/01/b.ts`
+
+Exercice 2 question a : `node exercices/02/a.js`
+Exercice 2 question b : `node exercices/02/b.js`
+Exercice 2 question c : `node exercices/02/c.js`
+
 # Leave Management System API
 
 Stack :
