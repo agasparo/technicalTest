@@ -9,8 +9,8 @@ var urls = [
 for (i = 0; i <= urls.length; i++) {
   // why <= and not juste < ?
   // maybe try catch if you have one or more error
-  response = fetch(urls[i]); // maybe declare const to stock response and fetch is sync or async ?
-  urls[i] = response;
+  response = fetch(urls[i]); // fetch is sync or async ?
+  urls[i] = response; // declare const for response
 }
 
 // should display a list of posts
