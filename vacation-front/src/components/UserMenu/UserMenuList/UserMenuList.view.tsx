@@ -1,8 +1,8 @@
 import clsx from 'clsx'
+import { User } from 'types/user'
+import { useContext } from 'react'
 import { Spinner } from 'components/Spinner'
 import { UserContext } from 'constants/context'
-import { useContext } from 'react'
-import { User } from 'types/user'
 
 type UserMenuListViewProps = {
   onlyVacation: boolean
@@ -43,11 +43,11 @@ export const UserMenuListView = ({ onlyVacation, isLoading }: UserMenuListViewPr
                   <p>
                     {user.isOnVacation ? (
                       <span className="bg-red-100 text-red-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
-                        V
+                        Vacation
                       </span>
                     ) : (
                       <span className="bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
-                        F
+                        Free
                       </span>
                     )}
                   </p>

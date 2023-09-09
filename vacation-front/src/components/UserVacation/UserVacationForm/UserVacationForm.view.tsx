@@ -1,12 +1,12 @@
-import { DatePickerView } from 'components/DatePicker'
+import { VacationForm } from 'types/form'
 import { Spinner } from 'components/Spinner'
+import { DatePickerView } from 'components/DatePicker'
 import {
   FieldErrors,
   SubmitHandler,
   UseFormHandleSubmit,
   UseFormRegister,
 } from 'react-hook-form'
-import { VacationForm } from 'types/form'
 
 type UserVacationFormViewProps = {
   isLoading: boolean

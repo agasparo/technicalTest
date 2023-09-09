@@ -1,3 +1,4 @@
+import { UserForm } from 'types/form'
 import { Spinner } from 'components/Spinner'
 import {
   FieldErrors,
@@ -5,7 +6,6 @@ import {
   UseFormHandleSubmit,
   UseFormRegister,
 } from 'react-hook-form'
-import { UserForm } from 'types/form'
 
 type UserMenuFormViewProps = {
   isLoading: boolean

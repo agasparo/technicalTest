@@ -1,6 +1,6 @@
-import { UserVacationContainer } from 'components/UserVacation'
-import { UserContext } from 'constants/context'
 import { useContext } from 'react'
+import { UserContext } from 'constants/context'
+import { UserVacationContainer } from 'components/UserVacation'
 
 export const UserInfosView = () => {
   const { selectedUser } = useContext(UserContext)

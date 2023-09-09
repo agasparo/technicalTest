@@ -1,7 +1,7 @@
-import { UserContext } from 'constants/context'
 import { useState } from 'react'
-import { User, UserContextType } from 'types/user'
 import { HomeView } from './Home.view'
+import { UserContext } from 'constants/context'
+import { User, UserContextType } from 'types/user'
 
 export const HomeContainer = () => {
   const setUserList = (users: User[]) => {

@@ -1,8 +1,8 @@
 import { UserContext } from 'constants/context'
-import { getUserListFetcher } from 'fetcher/userFetcher'
-import { useContext, useEffect, useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
 import { UserMenuListView } from './UserMenuList.view'
+import { useContext, useEffect, useState } from 'react'
+import { getUserListFetcher } from 'fetcher/userFetcher'
 
 type UserMenuListContainerProps = {
   onlyVacation: boolean

@@ -1,1 +1,1 @@
-export * from './UserVacationArray.view'
+export * from './UserVacationArray'

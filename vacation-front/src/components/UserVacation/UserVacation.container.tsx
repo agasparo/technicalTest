@@ -1,13 +1,13 @@
+import { User } from 'types/user'
+import { Vacation } from 'types/vacation'
+import { useState, useEffect } from 'react'
+import { toast, ToastContainer } from 'react-toastify'
+import { UserVacationView } from './UserVacation.view'
 import {
   getUserFuturVacation,
   getUserPresentVacation,
   getUserPastVacation,
 } from 'fetcher/vacationFetcher'
-import { useState, useEffect } from 'react'
-import { toast, ToastContainer } from 'react-toastify'
-import { User } from 'types/user'
-import { Vacation } from 'types/vacation'
-import { UserVacationView } from './UserVacation.view'
 
 type UserVacationContainerProps = {
   selectedUser: User

@@ -1,6 +1,6 @@
 import { API } from 'constants/api'
-import { API_URL } from 'constants/routing'
 import { VacationForm } from 'types/form'
+import { API_URL } from 'constants/routing'
 
 export const addVacationByUserId = (vacationForm: VacationForm, userId: string) => {
   return API.post(API_URL.ADD_VACATION, {

@@ -1,10 +1,10 @@
+import { VacationForm } from 'types/form'
 import { UserContext } from 'constants/context'
-import { getUserListFetcher } from 'fetcher/userFetcher'
-import { addVacationByUserId } from 'fetcher/vacationFetcher'
+import { ToastContainer, toast } from 'react-toastify'
 import { useContext, useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { ToastContainer, toast } from 'react-toastify'
-import { VacationForm } from 'types/form'
+import { getUserListFetcher } from 'fetcher/userFetcher'
+import { addVacationByUserId } from 'fetcher/vacationFetcher'
 import { UserVacationFormView } from './UserVacationForm.view'
 
 type UserVacationFormContainerProps = {
@@ -34,7 +34,7 @@ export const UserVacationFormContainer = ({ userId }: UserVacationFormContainerP
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId])
 
-  const onSubmit: SubmitHandler<VacationForm> = async (data) => {
+  const onSubmit: SubmitHandler<VacationForm> = async (data: VacationForm) => {
     try {
       setIsLoading(true)
       await addVacationByUserId(data, userId)

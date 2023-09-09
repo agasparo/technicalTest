@@ -1,9 +1,8 @@
 type UserMenuBarProps = {
   setOnlyVacation: () => void
-  onlyVacation: boolean
 }
 
-export const UserMenuBar = ({ setOnlyVacation, onlyVacation }: UserMenuBarProps) => {
+export const UserMenuBar = ({ setOnlyVacation }: UserMenuBarProps) => {
   return (
     <div className="border-b-2 h-12 flex justify-center pt-3">
       <div>

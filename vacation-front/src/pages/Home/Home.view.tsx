@@ -1,5 +1,5 @@
-import { UserInfosContainer } from 'components/UserInfos'
 import { UserMenuContainer } from 'components/UserMenu'
+import { UserInfosContainer } from 'components/UserInfos'
 
 export const HomeView = () => {
   return (

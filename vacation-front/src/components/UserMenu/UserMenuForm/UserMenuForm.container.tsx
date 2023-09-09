@@ -1,10 +1,10 @@
-import { UserContext } from 'constants/context'
-import { addNewUserFetcher } from 'fetcher/userFetcher'
-import { useContext, useState } from 'react'
-import { useForm, SubmitHandler } from 'react-hook-form'
-import { toast, ToastContainer } from 'react-toastify'
 import { UserForm } from 'types/form'
+import { useContext, useState } from 'react'
+import { UserContext } from 'constants/context'
+import { toast, ToastContainer } from 'react-toastify'
 import { UserMenuFormView } from './UserMenuForm.view'
+import { addNewUserFetcher } from 'fetcher/userFetcher'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 export const UserMenuFormContainer = () => {
   const { setUserList, userList } = useContext(UserContext)
@@ -23,7 +23,7 @@ export const UserMenuFormContainer = () => {
     },
   })
 
-  const onSubmit: SubmitHandler<UserForm> = async (data) => {
+  const onSubmit: SubmitHandler<UserForm> = async (data: UserForm) => {
     try {
       setIsLoading(true)
       const response = await addNewUserFetcher(data.firstname, data.lastname)

@@ -1,14 +1,11 @@
 import { Vacation } from 'types/vacation'
 
-type UserVacationArrayViewProps = {
+type UserVacationArrayProps = {
   title: string
   vacations: Vacation[]
 }
 
-export const UserVacationArrayView = ({
-  title,
-  vacations,
-}: UserVacationArrayViewProps) => {
+export const UserVacationArray = ({ title, vacations }: UserVacationArrayProps) => {
   return (
     <div className="w-5/6">
       <p className="mb-5 mt-5 text-base">{title}</p>

@@ -1,7 +1,7 @@
-import { Spinner } from 'components/Spinner'
 import { User } from 'types/user'
 import { Vacation } from 'types/vacation'
-import { UserVacationArrayView } from './UserVacationArray'
+import { Spinner } from 'components/Spinner'
+import { UserVacationArray } from './UserVacationArray'
 import { UserVacationFormContainer } from './UserVacationForm'
 
 type UserVacationViewProps = {
@@ -29,12 +29,9 @@ export const UserVacationView = ({
             {(selectedUser.firstname + ' ' + selectedUser.lastname).toUpperCase()}
           </p>
           <UserVacationFormContainer userId={selectedUser.userId} />
-          <UserVacationArrayView
-            title="Incoming vacations"
-            vacations={incomingVacations}
-          />
-          <UserVacationArrayView title="Present vacations" vacations={presentVacations} />
-          <UserVacationArrayView title="Past vacations" vacations={passedVacations} />
+          <UserVacationArray title="Incoming vacations" vacations={incomingVacations} />
+          <UserVacationArray title="Present vacations" vacations={presentVacations} />
+          <UserVacationArray title="Past vacations" vacations={passedVacations} />
         </>
       )}
     </div>

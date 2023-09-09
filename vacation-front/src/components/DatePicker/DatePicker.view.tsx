@@ -1,5 +1,5 @@
-import { UseFormRegister } from 'react-hook-form'
 import { VacationForm } from 'types/form'
+import { UseFormRegister } from 'react-hook-form'
 
 type DatePickerViewProps = {
   currentDate?: string
@@ -25,7 +25,7 @@ export const DatePickerView = ({
       <input
         {...register(registerName as any, { required: true })}
         type="date"
-        value={currentDate ?? undefined}
+        value={currentDate}
         id="datePicker-input"
         className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500"
       />
