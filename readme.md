@@ -8,8 +8,8 @@ location : `exercices` directory and subfolder 1 or 2
 
 To run ts file : `npx ts-node exercice_name.ts`
 
-Exercice 1 question a : `npx exercices/01/a.ts`<br />
-Exercice 1 question b : `npx exercices/01/b.ts`<br />
+Exercice 1 question a : `npx ts-node exercices/01/a.ts`<br />
+Exercice 1 question b : `npx ts-node exercices/01/b.ts`<br />
 
 Exercice 2 question a : `node exercices/02/a.js`<br />
 Exercice 2 question b : `node exercices/02/b.js`<br />
