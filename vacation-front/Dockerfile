@@ -1,6 +1,6 @@
 FROM node:18.16.1 
 
-ENV NODE_ENV=development
+ENV NODE_ENV=prod
 
 RUN mkdir -p /app && chown -R node:node /app && \
     apt-get update && apt-get install -y procps

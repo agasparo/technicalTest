@@ -22,6 +22,7 @@ services:
     build:
       context: vacation-back
       dockerfile: Dockerfile
+    command: sh -c '/wait && yarn start:prod'
     depends_on:
       - mysqldb
     environment:
@@ -30,12 +31,14 @@ services:
       - "USERNAME=${USERNAME}"
       - "PASSWORD=${PASSWORD}"
       - "DB_NAME=${DB_NAME}"
+      - WAIT_HOSTS=mysqldb:3306
+      - WAIT_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=10
+      - WAIT_HOST_CONNECT_TIMEOUT=30
     networks:
       - shared-network
     ports:
       - 5000:3000
-    volumes:
-      - /app/node_modules
     restart: unless-stopped
 
   vacation-frontend:
@@ -50,9 +53,6 @@ services:
       - vacation-backend
     networks:
       - shared-network
-    volumes:
-      - ./vacation-front:/app
-      - /app/node_modules
     restart: unless-stopped
 
 networks:
