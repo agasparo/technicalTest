@@ -8,7 +8,7 @@ import {
   Repository,
 } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
-import { VacationDto, VacationEnumType } from './dto/vacation.dto'
+import { VacationDto } from './dto/vacation.dto'
 import { Vacation } from './entity/vacation.entity'
 import { UserService } from 'src/user/user.service'
 import { NOW } from 'src/config/constants'
@@ -21,7 +21,7 @@ export class VacationService {
     private readonly userService: UserService,
   ) {}
 
-  createVacationForOneUser = async (vacation: VacationDto): Promise<any> => {
+  createVacationForOneUser = async (vacation: VacationDto): Promise<Vacation> => {
     try {
       const startDate = new Date(new Date(vacation.startDate).toDateString())
       const endDate = new Date(new Date(vacation.endDate).toDateString())
@@ -42,20 +42,6 @@ export class VacationService {
         'Error cant create new vacation for user ',
         HttpStatus.BAD_REQUEST,
       )
-    }
-  }
-
-  getVacationsByUserId = (
-    userId: string,
-    type: VacationEnumType,
-  ): Promise<Vacation[]> => {
-    switch (type) {
-      case 'futur':
-        return this.getFuturVacationByUser(userId)
-      case 'past':
-        return this.getPastVacationByUser(userId)
-      default:
-        return this.getCurrentVacationByUser(userId)
     }
   }
 

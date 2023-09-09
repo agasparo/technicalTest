@@ -37,9 +37,3 @@ export class VacationDto {
   @IsNotEmpty()
   user: string
 }
-
-export enum VacationEnumType {
-  FUTUR = 'futur',
-  PAST = 'past',
-  CURRENT = 'current',
-}

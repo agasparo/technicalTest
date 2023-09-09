@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common'
-import { VacationDto, VacationEnumType } from './dto/vacation.dto'
+import { VacationDto } from './dto/vacation.dto'
 import { VacationService } from './vacation.service'
 import { Vacation } from './entity/vacation.entity'
 import { ApiOkResponse } from '@nestjs/swagger'
@@ -24,7 +24,7 @@ export class VacationController {
   })
   @Get('/user/:id/futur')
   getFuturVacationByUserId(@Param('id') userId: string): Promise<Vacation[]> {
-    return this.vacationService.getVacationsByUserId(userId, VacationEnumType.FUTUR)
+    return this.vacationService.getFuturVacationByUser(userId)
   }
 
   @ApiOkResponse({
@@ -34,7 +34,7 @@ export class VacationController {
   })
   @Get('/user/:id/past')
   getPastVacationByUserId(@Param('id') userId: string): Promise<Vacation[]> {
-    return this.vacationService.getVacationsByUserId(userId, VacationEnumType.PAST)
+    return this.vacationService.getPastVacationByUser(userId)
   }
 
   @ApiOkResponse({
@@ -44,6 +44,6 @@ export class VacationController {
   })
   @Get('/user/:id/current')
   getCurrentVacationByUserId(@Param('id') userId: string): Promise<Vacation[]> {
-    return this.vacationService.getVacationsByUserId(userId, VacationEnumType.CURRENT)
+    return this.vacationService.getCurrentVacationByUser(userId)
   }
 }
