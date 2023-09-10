@@ -4,20 +4,20 @@ Hi! Here the test.
 
 # Important
 
-use node 18 to run exercices
+use node 18 to run exercises
 
-# Exercices ( 1 and 2)
+# exercises ( 1 and 2)
 
-location : `exercices` directory and subfolder 1 or 2
+location : `exercises` directory and subfolder 1 or 2
 
 To run ts file : `npx ts-node exercice_name.ts`
 
-Exercice 1 question a : `npx ts-node exercices/01/a.ts`<br />
-Exercice 1 question b : `npx ts-node exercices/01/b.ts`<br />
+Exercice 1 question a : `npx ts-node exercises/01/a.ts`<br />
+Exercice 1 question b : `npx ts-node exercises/01/b.ts`<br />
 
-Exercice 2 question a : `cat exercices/02/a.js`<br />
-Exercice 2 question b : `node exercices/02/b.js`<br />
-Exercice 2 question c : `node exercices/02/c.js`
+Exercice 2 question a : `cat exercises/02/a.js`<br />
+Exercice 2 question b : `node exercises/02/b.js`<br />
+Exercice 2 question c : `node exercises/02/c.js`
 
 # Leave Management System API
 
