@@ -4,7 +4,7 @@ var urls = [
   { url: "https://jsonplaceholder.typicode.com/posts/3" },
 ];
 
-for (i = 0; i < urls.length; i++) {
+for (let i = 0; i < urls.length; i++) {
   urls[i] = fetch(urls[i].url).then((response) => response.json());
 }
 
