@@ -2,6 +2,10 @@
 
 Hi! Here the test.
 
+# Important
+
+use node 18 to run exercices
+
 # Exercices ( 1 and 2)
 
 location : `exercices` directory and subfolder 1 or 2
